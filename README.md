@@ -34,13 +34,13 @@ The focus is not only on getting the output right, but also on keeping each prog
 | Lab | Core Topic | Programs | Language | Status | Open |
 |:---:|---|:---:|:---:|:---:|:---:|
 | **01** | Structures & Records | **10** | C | ✅ | [Explore](./LAB%201/) |
-| **02** | Classes, Objects & Member Functions | **7** | C++ | ✅ | [Explore](./LAB%202/) |
-| **03** | Dynamic Memory Allocation | **8** | C++ | ✅ | [Explore](./LAB%203/) |
+| **02** | Classes, Objects & Member Functions | **10** | C++ | ✅ | [Explore](./LAB%202/) |
+| **03** | Dynamic Memory Allocation | **10** | C++ | ✅ | [Explore](./LAB%203/) |
 | **04** | Friend Function & Friend Class | **10** | C++ | ✅ | [Explore](./LAB%204/) |
 
 <div align="center">
 
-### **35 Programs • 4 Labs • One OOP Journey**
+### **40 Programs • 4 Labs • One OOP Journey**
 
 </div>
 
@@ -139,11 +139,11 @@ b425050/
 │
 ├── LAB 2/
 │   ├── README.md
-│   └── L2P1.cpp ... L2P7.cpp
+│   └── L2P1.cpp ... L2P10.cpp
 │
 ├── LAB 3/
 │   ├── README.md
-│   └── L3P1.cpp ... L3P8.cpp
+│   └── L3P1.cpp ... L3P10.cpp
 │
 └── LAB 4/
     ├── README.md
