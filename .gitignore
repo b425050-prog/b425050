@@ -1,0 +1,6 @@
+# Locally compiled exercise outputs
+*.exe
+*.out
+*.o
+*.obj
+**/build/

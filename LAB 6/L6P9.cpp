@@ -1,40 +1,25 @@
-// Lab 6, Program 9: Restaurant Table Manager
-// Uses a dynamically allocated array and pointer traversal.
+// Lab 6, Program 9: Temperature Comparison
+// OOP Laboratory - Group B2 - 29 September 2026
 
+#include <cmath>
 #include <iostream>
 
+class Temperature {
+    double celsius;
+public:
+    Temperature(double c) : celsius(c) {}
+    bool operator<(const Temperature& other) const { return celsius < other.celsius; }
+    bool operator>(const Temperature& other) const { return celsius > other.celsius; }
+};
+
 int main() {
-    int tableCount = 0;
-    std::cout << "Enter the number of tables: ";
-    if (!(std::cin >> tableCount) || tableCount <= 0) {
-        std::cerr << "Table count must be positive.\n";
-        return 1;
+    double c1, c2;
+    std::cout << "Enter two temperatures in Celsius: ";
+    if (!(std::cin >> c1 >> c2) || !std::isfinite(c1) || !std::isfinite(c2)) {
+        std::cerr << "Enter finite temperatures.\n"; return 1;
     }
-
-    int* tableNumbers = new int[tableCount];
-    std::cout << "Enter " << tableCount << " table numbers:\n";
-
-    for (int* currentTable = tableNumbers;
-         currentTable < tableNumbers + tableCount; ++currentTable) {
-        if (!(std::cin >> *currentTable)) {
-            std::cerr << "Please enter integer table numbers only.\n";
-            delete[] tableNumbers;
-            return 1;
-        }
-    }
-
-    int smallestTableNumber = *tableNumbers;
-    for (const int* currentTable = tableNumbers + 1;
-         currentTable < tableNumbers + tableCount; ++currentTable) {
-        if (*currentTable < smallestTableNumber) {
-            smallestTableNumber = *currentTable;
-        }
-    }
-
-    std::cout << "Smallest table number: " << smallestTableNumber << '\n';
-
-    // Memory created with new[] must be released with delete[].
-    delete[] tableNumbers;
-    tableNumbers = nullptr;
-    return 0;
+    const Temperature first(c1), second(c2);
+    if (first < second) std::cout << "First temperature is lower than the second.\n";
+    else if (first > second) std::cout << "First temperature is higher than the second.\n";
+    else std::cout << "Both temperatures are equal.\n";
 }

@@ -1,37 +1,36 @@
-// Lab 6, Program 2: Water Tank Level
-// Reads and updates a water level through a pointer.
+// Lab 6, Program 2: Complex Number Subtraction
+// OOP Laboratory - Group B2 - 29 September 2026
 
+#include <cmath>
 #include <iostream>
 
+class Complex {
+    double real;
+    double imaginary;
+public:
+    Complex(double r, double i) : real(r), imaginary(i) {}
+    Complex operator-(const Complex& other) const {
+        return Complex(real - other.real, imaginary - other.imaginary);
+    }
+    void display() const {
+        std::cout << (real == 0 ? 0 : real)
+                  << (imaginary < 0 ? " - " : " + ") << std::abs(imaginary) << 'i';
+    }
+};
+
 int main() {
-    double waterLevelLitres = 0.0;
-    double waterAddedLitres = 0.0;
-    double waterRemovedLitres = 0.0;
-
-    std::cout << "Enter the current water level in litres: ";
-    if (!(std::cin >> waterLevelLitres) || waterLevelLitres < 0.0) {
-        std::cerr << "Water level cannot be negative.\n";
-        return 1;
+    double r1, i1, r2, i2;
+    std::cout << "Enter C1 and C2 (real imaginary for each): ";
+    if (!(std::cin >> r1 >> i1 >> r2 >> i2) ||
+        !std::isfinite(r1) || !std::isfinite(i1) ||
+        !std::isfinite(r2) || !std::isfinite(i2) ||
+        !std::isfinite(r1 - r2) || !std::isfinite(i1 - i2)) {
+        std::cerr << "Enter finite numbers with a representable difference.\n"; return 1;
     }
-
-    double* waterLevelPointer = &waterLevelLitres;
-    std::cout << "Current water level : " << *waterLevelPointer << " litres\n";
-
-    std::cout << "Enter the amount of water added: ";
-    if (!(std::cin >> waterAddedLitres) || waterAddedLitres < 0.0) {
-        std::cerr << "Added amount cannot be negative.\n";
-        return 1;
-    }
-    *waterLevelPointer += waterAddedLitres;
-
-    std::cout << "Enter the amount of water removed: ";
-    if (!(std::cin >> waterRemovedLitres) || waterRemovedLitres < 0.0 ||
-        waterRemovedLitres > *waterLevelPointer) {
-        std::cerr << "Removed amount must be valid for the current level.\n";
-        return 1;
-    }
-    *waterLevelPointer -= waterRemovedLitres;
-
-    std::cout << "Final water level   : " << *waterLevelPointer << " litres\n";
-    return 0;
+    const Complex first(r1, i1), second(r2, i2);
+    const Complex result = first - second;
+    std::cout << "C1 = "; first.display();
+    std::cout << "\nC2 = "; second.display();
+    std::cout << "\nC1 - C2 = "; result.display();
+    std::cout << '\n';
 }

@@ -1,29 +1,35 @@
-// Lab 6, Program 3: Sports Equipment Rack
-// Traverses an array using pointer arithmetic and prints each address.
+// Lab 6, Program 3: Student Marks Comparison
+// OOP Laboratory - Group B2 - 29 September 2026
 
 #include <iostream>
+#include <string>
+
+class Student {
+    std::string name;
+    int totalMarks;
+public:
+    Student(const std::string& n, int marks) : name(n), totalMarks(marks) {}
+    bool operator>(const Student& other) const { return totalMarks > other.totalMarks; }
+    const std::string& getName() const { return name; }
+};
 
 int main() {
-    constexpr int equipmentCount = 6;
-    int equipmentIds[equipmentCount]{};
-    int* firstEquipment = equipmentIds;
-
-    std::cout << "Enter " << equipmentCount << " equipment IDs:\n";
-    for (int offset = 0; offset < equipmentCount; ++offset) {
-        if (!(std::cin >> *(firstEquipment + offset))) {
-            std::cerr << "Please enter integer equipment IDs only.\n";
-            return 1;
-        }
+    std::string name1, name2;
+    int marks1, marks2;
+    std::cout << "Enter first student's name: ";
+    if (!std::getline(std::cin >> std::ws, name1)) return 1;
+    std::cout << "Enter total marks: ";
+    if (!(std::cin >> marks1) || marks1 < 0) {
+        std::cerr << "Marks must be a non-negative integer.\n"; return 1;
     }
-
-    std::cout << "\nEquipment rack\n"
-              << "----------------------------------------\n";
-    for (int offset = 0; offset < equipmentCount; ++offset) {
-        int* currentEquipment = firstEquipment + offset;
-        std::cout << "Equipment " << offset + 1 << " | ID: "
-                  << *currentEquipment << " | Address: " << currentEquipment
-                  << '\n';
+    std::cout << "Enter second student's name: ";
+    if (!std::getline(std::cin >> std::ws, name2)) return 1;
+    std::cout << "Enter total marks: ";
+    if (!(std::cin >> marks2) || marks2 < 0) {
+        std::cerr << "Marks must be a non-negative integer.\n"; return 1;
     }
-
-    return 0;
+    const Student first(name1, marks1), second(name2, marks2);
+    if (first > second) std::cout << first.getName() << " has higher marks.\n";
+    else if (second > first) std::cout << second.getName() << " has higher marks.\n";
+    else std::cout << "Both students have equal marks.\n";
 }

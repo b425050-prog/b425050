@@ -1,39 +1,32 @@
-// Lab 6, Program 6: Podcast Duration Analyzer
-// Finds the longest duration with pointer traversal and no array indexing.
+// Lab 6, Program 6: Counter Increment
+// OOP Laboratory - Group B2 - 29 September 2026
 
 #include <iostream>
 
-double findLongestDuration(const double* firstDuration, int episodeCount) {
-    double longestDuration = *firstDuration;
-
-    for (const double* currentDuration = firstDuration + 1;
-         currentDuration < firstDuration + episodeCount;
-         ++currentDuration) {
-        if (*currentDuration > longestDuration) {
-            longestDuration = *currentDuration;
-        }
+class Counter {
+    long long value;
+public:
+    Counter(long long v) : value(v) {}
+    Counter& operator++() { ++value; return *this; }
+    Counter operator++(int) {
+        Counter previous = *this;
+        ++(*this);
+        return previous;
     }
-
-    return longestDuration;
-}
+    long long getValue() const { return value; }
+};
 
 int main() {
-    constexpr int episodeCount = 6;
-    double episodeDurations[episodeCount]{};
-
-    std::cout << "Enter " << episodeCount
-              << " episode durations in minutes:\n";
-    for (double* currentDuration = episodeDurations;
-         currentDuration < episodeDurations + episodeCount;
-         ++currentDuration) {
-        if (!(std::cin >> *currentDuration) || *currentDuration < 0.0) {
-            std::cerr << "Durations must be non-negative numbers.\n";
-            return 1;
-        }
-    }
-
-    std::cout << "Longest episode duration: "
-              << findLongestDuration(episodeDurations, episodeCount)
-              << " minutes\n";
-    return 0;
+    int value;
+    std::cout << "Enter initial counter value: ";
+    if (!(std::cin >> value)) { std::cerr << "Invalid integer.\n"; return 1; }
+    Counter counter(value);
+    std::cout << "Before prefix: " << counter.getValue() << '\n';
+    const Counter prefixResult = ++counter;
+    std::cout << "Prefix returned: " << prefixResult.getValue()
+              << "\nAfter prefix: " << counter.getValue() << '\n';
+    std::cout << "Before postfix: " << counter.getValue() << '\n';
+    const Counter postfixResult = counter++;
+    std::cout << "Postfix returned: " << postfixResult.getValue()
+              << "\nAfter postfix: " << counter.getValue() << '\n';
 }

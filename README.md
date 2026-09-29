@@ -1,102 +1,137 @@
 <div align="center">
 
-# 🧪 Object-Oriented Programming Laboratory
-
-### From structured records to pointers and dynamic memory
-
-**C / C++17 • 6 Labs • 60 Source Programs • IIIT Bhubaneswar**
-
-[![Language](https://img.shields.io/badge/language-C%20%7C%20C%2B%2B17-0b6db7?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)
-[![Labs](https://img.shields.io/badge/labs-01--06-7957d5?style=for-the-badge)](#-laboratory-map)
-[![Build](https://img.shields.io/badge/build-g%2B%2B%20-Wall-success?style=for-the-badge)](#%EF%B8%8F-quick-start)
-
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/lab6_pointer_memory_preview.png">
-  <img src="assets/lab6_pointer_memory.gif" width="100%" alt="Animated C++ pointer and memory visualization">
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/oop_lab_banner_preview.png">
+  <img src="assets/oop_lab_banner.gif" width="100%" alt="OOP Laboratory: learn the concept, write the class, run the code. Animated C++ operators surround a class.">
 </picture>
 
-**Newest:** [Lab 06 — C++ Pointers](./LAB%206/) · pointer arithmetic, traversal, functions, and dynamic arrays
+# Object-Oriented Programming Laboratory
+
+**Small programs. Clear concepts. One step closer to fluent C++.**
+
+![C and C++17](https://img.shields.io/badge/C_%2F_C%2B%2B17-38BDF8?style=for-the-badge&logo=cplusplus&logoColor=0B1020)
+![6 Labs](https://img.shields.io/badge/6_Labs-A78BFA?style=for-the-badge)
+![1 Lab Exam](https://img.shields.io/badge/1_Lab_Exam-FBBF24?style=for-the-badge)
+![70 Programs](https://img.shields.io/badge/70_Programs-34D399?style=for-the-badge)
+
+**IIIT Bhubaneswar** · Object Oriented Programming · C / C++
+
+[Explore the labs](#laboratory-map) &nbsp; / &nbsp; [New: Lab 6](./LAB%206/) &nbsp; / &nbsp; [Lab Exam-1](./Lab%20Exam-1/) &nbsp; / &nbsp; [Run a program](#quick-start)
 
 </div>
 
 ---
 
-## 🗺️ Laboratory Map
+## Laboratory map
 
-| Lab | Topic | Core ideas | Programs |
-|:---:|---|---|:---:|
-| [**01**](./LAB%201/) | Structures & Records | Structures, nested records, arrays of structures | 10 |
-| [**02**](./LAB%202/) | Classes & Objects | Encapsulation, private data, member functions | 10 |
-| [**03**](./Lab3/) | Dynamic Memory Allocation | `new`, `delete`, dynamic arrays and matrices | 10 |
-| [**04**](./LAB%204/) | Friend Function & Friend Class | Controlled private access and object collaboration | 10 |
-| [**05**](./LAB%205/) | Function Overloading | Overload resolution and compile-time polymorphism | 10 |
-| [**06**](./LAB%206/) | **C++ Pointers** | Dereferencing, pointer arithmetic, traversal, `delete[]` | **10** |
+From structures and records to classes, memory, and operator overloading. Each folder contains ten independent programs and a guide to the concepts behind them.
 
-Each lab has its own guide with a problem index, source links, compilation commands, and viva-ready notes.
+| Module | What you will practise | Concepts | Open |
+|:---|:---|:---|:---:|
+| **01 · Structures & Records** | Organise related data | Structures · nested records · arrays | [Lab 1 →](./LAB%201/) |
+| **02 · Classes & Objects** | Model data and behaviour together | Encapsulation · private data · member functions | [Lab 2 →](./LAB%202/) |
+| **03 · Dynamic Memory** | Allocate arrays and matrices at runtime | `new` · `delete` · memory ownership | [Lab 3 →](./Lab3/) |
+| **04 · Friends** | Give selected functions and classes private access | Friend functions · friend classes | [Lab 4 →](./LAB%204/) |
+| **05 · Function Overloading** | Give one function name multiple signatures | Parameters · overload resolution | [Lab 5 →](./LAB%205/) |
+| **06 · Operator Overloading** ✦ | Add distances, compare objects, combine inventory | `+` · `-` · `>` · `<` · `++` · `==` | [Lab 6 →](./LAB%206/) |
+| **Lab Exam-1 · C++ Pointers** | Trace addresses and traverse arrays | Dereferencing · pointer arithmetic · dynamic arrays | [Exam →](./Lab%20Exam-1/) |
 
-## ✨ Featured: Lab 06
+> **Folder update:** the earlier pointer-based `LAB 6` is now **[Lab Exam-1](./Lab%20Exam-1/)**, with sources named `LE1P1.cpp`–`LE1P10.cpp`. The new **[LAB 6](./LAB%206/)** follows the operator-overloading worksheet dated **29 September 2026**, Group **B2**.
 
-Lab 06 follows a pointer from a single variable into arrays, functions, text traversal, searching, and dynamically allocated memory. The programs deliberately use pointer arithmetic where the worksheet restricts array indexing.
+## In focus: operators that understand your objects
+
+`Distance + Distance` can mean more than adding two numbers. An overloaded operator combines the data and returns a useful new object.
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/pointer_traversal_preview.png">
-  <img src="assets/pointer_traversal.gif" width="100%" alt="Pointer moving through consecutive integer array elements">
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/operator_overloading_preview.png">
+  <img src="assets/operator_overloading.gif" width="100%" alt="5 feet 8 inches plus 3 feet 7 inches becomes 8 feet 15 inches, then normalises to 9 feet 3 inches.">
 </picture>
 
 ```cpp
-int values[] = {18, 42, 27, 64, 35, 51};
-int* current = values;
-
-while (current < values + 6) {
-    std::cout << *current << ' ';  // dereference the current element
-    ++current;                     // advance by one integer
+Distance operator+(const Distance& other) const {
+    // The constructor converts every 12 inches into one foot.
+    return Distance(feet + other.feet, inches + other.inches);
 }
+
+const Distance result = first + second;
 ```
 
-> `++current` advances to the next `int`; pointer arithmetic is automatically scaled by the pointed-to type.
+| Create a new value | Ask a question | Change a counter |
+|:---|:---|:---|
+| Add distances and times | Which student has higher marks? | `++counter` returns the updated object |
+| Subtract complex numbers | Are these dates equal? | `counter++` returns the previous value |
+| Negate a number or merge inventory | Which product has greater total value? | Both increment the original counter |
 
-## ▶️ Quick Start
+[**Explore all ten operator-overloading exercises →**](./LAB%206/README.md)
 
-Clone the repository and enter any lab folder:
+## Quick start
+
+You need a C++17 compiler such as GCC. Every source file has its own `main()`, so compile one exercise at a time.
 
 ```bash
 git clone https://github.com/b425050-prog/b425050.git
-cd b425050/"LAB 6"
+cd "b425050/LAB 6"
 g++ -std=c++17 -Wall -Wextra -pedantic L6P1.cpp -o L6P1
 ./L6P1
 ```
 
-On Windows PowerShell, run the generated executable with `./L6P1.exe` or `.\L6P1.exe`.
+On **Windows PowerShell**, compile and run with:
 
-## 📁 Repository Layout
+```powershell
+g++ -std=c++17 -Wall -Wextra -pedantic L6P1.cpp -o L6P1.exe
+.\L6P1.exe
+```
+
+Try `5 8` for the first distance and `3 7` for the second. The result is **9 feet 3 inches**. Replace `P1` with `P2`–`P10` to try the remaining exercises.
+
+<details>
+<summary><b>Compile all new Lab 6 programs in PowerShell</b></summary>
+
+From the `LAB 6` folder:
+
+```powershell
+New-Item -ItemType Directory -Force build | Out-Null
+1..10 | ForEach-Object {
+    g++ -std=c++17 -Wall -Wextra -pedantic "L6P$_.cpp" -o "build/L6P$_.exe"
+    if ($LASTEXITCODE -ne 0) { throw "Compilation failed for L6P$_.cpp" }
+}
+.\build\L6P1.exe
+```
+
+</details>
+
+## Find your way around
 
 ```text
 b425050/
-├── README.md
-├── assets/              # animated GIFs and static fallbacks
-├── LAB 1/               # structures and records
-├── LAB 2/               # classes and objects
-├── Lab3/                # dynamic memory allocation
-├── LAB 4/               # friend functions and classes
-├── LAB 5/               # function overloading
-└── LAB 6/               # C++ pointers (10 programs)
+├── README.md          Start here
+├── assets/            Local animations and still-image alternatives
+├── LAB 1/             Structures and records
+├── LAB 2/             Classes and objects
+├── Lab3/              Dynamic memory allocation
+├── LAB 4/             Friend functions and classes
+├── LAB 5/             Function overloading
+├── LAB 6/             Operator overloading · L6P1.cpp–L6P10.cpp
+└── Lab Exam-1/        C++ pointers · LE1P1.cpp–LE1P10.cpp
 ```
 
-## ✅ Code Quality
+## A useful way to study
 
-- Descriptive identifiers instead of single-letter working variables
-- Focused comments that explain pointer intent and memory ownership
-- Input validation for sizes, positions, and status codes
-- `const` pointers for read-only traversal
-- Matching `delete[]` for every dynamically allocated array
-- Portable C++17 builds with warning flags enabled
+1. **Read** the exercise and identify the class and its data.
+2. **Predict** the output before running the program.
+3. **Experiment** with equal values, zeroes, carries, and mismatched items.
+4. **Explain** which operator runs and whether the original object changes.
+
+The new Lab 6 guide includes sample inputs, expected results, and short viva notes. Its arithmetic operators return new objects, comparison operators return `bool`, and the counter demonstrates the different prefix and postfix return values.
 
 ---
 
 <div align="center">
 
-**International Institute of Information Technology, Bhubaneswar**
+**Read it. Run it. Change it. Understand it.**
 
-Built as a practical progression through C and C++ fundamentals.
+International Institute of Information Technology, Bhubaneswar
+
+<sub>Animations live in this repository, with static alternatives for reduced-motion preferences.</sub>
 
 </div>
