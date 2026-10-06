@@ -2,127 +2,120 @@
 
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/oop_lab_banner_preview.png">
-  <img src="assets/oop_lab_banner.gif" width="100%" alt="OOP Laboratory: learn the concept, write the class, run the code. Animated C++ operators surround a class.">
+  <img src="assets/oop_lab_banner.gif" width="100%" alt="OOP Laboratory: learn the concept, write the class, run the code.">
 </picture>
 
 # Object-Oriented Programming Laboratory
 
-**Small programs. Clear concepts. One step closer to fluent C++.**
+**Small programs. Clear concepts. Learn C++ by running it.**
 
 ![C and C++17](https://img.shields.io/badge/C_%2F_C%2B%2B17-38BDF8?style=for-the-badge&logo=cplusplus&logoColor=0B1020)
-![6 Labs](https://img.shields.io/badge/6_Labs-A78BFA?style=for-the-badge)
+![7 Labs](https://img.shields.io/badge/7_Labs-A78BFA?style=for-the-badge)
 ![1 Lab Exam](https://img.shields.io/badge/1_Lab_Exam-FBBF24?style=for-the-badge)
-![70 Programs](https://img.shields.io/badge/70_Programs-34D399?style=for-the-badge)
+![80 Programs](https://img.shields.io/badge/80_Programs-34D399?style=for-the-badge)
 
 **IIIT Bhubaneswar** · Object Oriented Programming · C / C++
 
-[Explore the labs](#laboratory-map) &nbsp; / &nbsp; [New: Lab 6](./LAB%206/) &nbsp; / &nbsp; [Lab Exam-1](./Lab%20Exam-1/) &nbsp; / &nbsp; [Run a program](#quick-start)
+[Explore the labs](#laboratory-map) · [New: Lab 7](./LAB%207/) · [Lab Exam-1](./Lab%20Exam-1/) · [Run a program](#quick-start)
 
 </div>
 
----
-
 ## Laboratory map
 
-From structures and records to classes, memory, and operator overloading. Each folder contains ten independent programs and a guide to the concepts behind them.
+Seven labs and one lab exam, with ten independent programs in each folder. Start with records, then work through classes, memory, overloading and inheritance.
 
 | Module | What you will practise | Concepts | Open |
 |:---|:---|:---|:---:|
 | **01 · Structures & Records** | Organise related data | Structures · nested records · arrays | [Lab 1 →](./LAB%201/) |
 | **02 · Classes & Objects** | Model data and behaviour together | Encapsulation · private data · member functions | [Lab 2 →](./LAB%202/) |
-| **03 · Dynamic Memory** | Allocate arrays and matrices at runtime | `new` · `delete` · memory ownership | [Lab 3 →](./Lab3/) |
+| **03 · Dynamic Memory** | Allocate arrays and objects at runtime | `new` · `delete` · matrices · records | [Lab 3 →](./Lab3/) |
 | **04 · Friends** | Give selected functions and classes private access | Friend functions · friend classes | [Lab 4 →](./LAB%204/) |
 | **05 · Function Overloading** | Give one function name multiple signatures | Parameters · overload resolution | [Lab 5 →](./LAB%205/) |
-| **06 · Operator Overloading** ✦ | Add distances, compare objects, combine inventory | `+` · `-` · `>` · `<` · `++` · `==` | [Lab 6 →](./LAB%206/) |
+| **06 · Operator Overloading** | Add, compare and update objects | `+` · `-` · `>` · `<` · `++` · `==` | [Lab 6 →](./LAB%206/) |
+| **07 · Inheritance** | Extend classes and combine their capabilities | Multilevel · multiple · overriding · virtual bases | [Lab 7 →](./LAB%207/) |
 | **Lab Exam-1 · C++ Pointers** | Trace addresses and traverse arrays | Dereferencing · pointer arithmetic · dynamic arrays | [Exam →](./Lab%20Exam-1/) |
 
-> **Folder update:** the earlier pointer-based `LAB 6` is now **[Lab Exam-1](./Lab%20Exam-1/)**, with sources named `LE1P1.cpp`–`LE1P10.cpp`. The new **[LAB 6](./LAB%206/)** follows the operator-overloading worksheet dated **29 September 2026**, Group **B2**.
-
-## In focus: operators that understand your objects
-
-`Distance + Distance` can mean more than adding two numbers. An overloaded operator combines the data and returns a useful new object.
+> The earlier pointer-based `LAB 6` is now **[Lab Exam-1](./Lab%20Exam-1/)**, using `LE1P1.cpp`–`LE1P10.cpp`. **[Lab 6](./LAB%206/)** covers operator overloading; **[Lab 7](./LAB%207/)** follows the inheritance worksheet dated **6 October 2026**, Group **B2**.
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/operator_overloading_preview.png">
-  <img src="assets/operator_overloading.gif" width="100%" alt="5 feet 8 inches plus 3 feet 7 inches becomes 8 feet 15 inches, then normalises to 9 feet 3 inches.">
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/oop_journey_lab7_preview.png">
+  <img src="assets/oop_journey_lab7.gif" width="100%" alt="The seven-lab learning path moves from records to classes, memory, friends, function overloading, operator overloading and inheritance.">
 </picture>
 
-```cpp
-Distance operator+(const Distance& other) const {
-    // The constructor converts every 12 inches into one foot.
-    return Distance(feet + other.feet, inches + other.inches);
-}
+## In focus: inheritance that you can trace
 
-const Distance result = first + second;
-```
+Lab 7 contains ten commented, interactive solutions. Every new source includes `#include <iostream>` and `using namespace std;`, with additional standard headers where needed. Its guide explains formulas, input choices, sample runs and common viva questions.
 
-| Create a new value | Ask a question | Change a counter |
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/lab7_inheritance_preview.png">
+  <img src="assets/lab7_inheritance.gif" width="100%" alt="Employee supplies a name and basic salary, Developer adds experience, and SeniorDeveloper adds a project bonus.">
+</picture>
+
+| Extend one chain | Combine independent bases | Share one common base |
 |:---|:---|:---|
-| Add distances and times | Which student has higher marks? | `++counter` returns the updated object |
-| Subtract complex numbers | Are these dates equal? | `counter++` returns the previous value |
-| Negate a number or merge inventory | Which product has greater total value? | Both increment the original counter |
+| Employee → Developer → SeniorDeveloper | Academic + Sports → StudentResult | Student + Employee → TeachingAssistant |
+| Vehicle → Car → LuxuryCar | InternalExam + ExternalExam → FinalResult | Developer + Tester → TechLead |
+| Person → Employee → Manager | Use `Base::display()` to resolve ambiguity | Use virtual inheritance to avoid duplicate base data |
 
-[**Explore all ten operator-overloading exercises →**](./LAB%206/README.md)
+[**Explore all ten inheritance exercises →**](./LAB%207/README.md)
 
 ## Quick start
 
-You need a C++17 compiler such as GCC. Every source file has its own `main()`, so compile one exercise at a time.
+Use a C++17 compiler such as GCC. Each source file has its own `main()`, so compile one exercise at a time.
 
 ```bash
 git clone https://github.com/b425050-prog/b425050.git
-cd "b425050/LAB 6"
-g++ -std=c++17 -Wall -Wextra -pedantic L6P1.cpp -o L6P1
-./L6P1
+cd "b425050/LAB 7"
+g++ -std=c++17 -Wall -Wextra -pedantic L7P1.cpp -o L7P1
+./L7P1
 ```
 
-On **Windows PowerShell**, compile and run with:
+From the `LAB 7` folder in Windows PowerShell:
 
 ```powershell
-g++ -std=c++17 -Wall -Wextra -pedantic L6P1.cpp -o L6P1.exe
-.\L6P1.exe
+g++ -std=c++17 -Wall -Wextra -pedantic L7P1.cpp -o L7P1.exe
+if ($LASTEXITCODE -ne 0) { throw "Compilation failed" }
+.\L7P1.exe
 ```
 
-Try `5 8` for the first distance and `3 7` for the second. The result is **9 feet 3 inches**. Replace `P1` with `P2`–`P10` to try the remaining exercises.
-
-<details>
-<summary><b>Compile all new Lab 6 programs in PowerShell</b></summary>
-
-From the `LAB 6` folder:
-
-```powershell
-New-Item -ItemType Directory -Force build | Out-Null
-1..10 | ForEach-Object {
-    g++ -std=c++17 -Wall -Wextra -pedantic "L6P$_.cpp" -o "build/L6P$_.exe"
-    if ($LASTEXITCODE -ne 0) { throw "Compilation failed for L6P$_.cpp" }
-}
-.\build\L6P1.exe
-```
-
-</details>
+Enter `Asha Das`, then `50000 4 10000`. The experience bonus is **10000.00** and the final salary is **70000.00**. Replace `P1` with `P2`–`P10` to explore the other exercises. For Lab 1, use `gcc L1P1.c -o L1P1` from `LAB 1`; those exercises use C.
 
 ## Find your way around
 
 ```text
 b425050/
-├── README.md          Start here
-├── assets/            Local animations and still-image alternatives
+├── README.md          Repository overview
+├── assets/            Local GIFs and static PNG alternatives
+├── scripts/           Lab 7 verification and animation generation
 ├── LAB 1/             Structures and records
 ├── LAB 2/             Classes and objects
 ├── Lab3/              Dynamic memory allocation
 ├── LAB 4/             Friend functions and classes
 ├── LAB 5/             Function overloading
 ├── LAB 6/             Operator overloading · L6P1.cpp–L6P10.cpp
+├── LAB 7/             Inheritance · L7P1.cpp–L7P10.cpp
+│   └── samples/       Ten input files and their captured outputs
 └── Lab Exam-1/        C++ pointers · LE1P1.cpp–LE1P10.cpp
 ```
 
 ## A useful way to study
 
-1. **Read** the exercise and identify the class and its data.
-2. **Predict** the output before running the program.
-3. **Experiment** with equal values, zeroes, carries, and mismatched items.
-4. **Explain** which operator runs and whether the original object changes.
+1. Read the exercise and sketch the required classes and inheritance paths.
+2. Predict the calculation or constructor order before running it.
+3. Try boundary cases: zero years, equal minimum balance, full marks and multiword names.
+4. Explain which class owns each field and which implementation executes.
 
-The new Lab 6 guide includes sample inputs, expected results, and short viva notes. Its arithmetic operators return new objects, comparison operators return `bool`, and the counter demonstrates the different prefix and postfix return values.
+Compare **overriding** in Lab 7 P2 with **overloading** in Lab 5. Inspect **protected** patient data in P8, then trace the single virtual base in P7 and P10. [Lab 6](./LAB%206/) remains the guide to operators that work on objects.
+
+## Check the new solutions
+
+From the repository root:
+
+```bash
+python scripts/verify_lab7.py
+```
+
+This uses GCC to compile the ten new programs with warnings treated as errors and checks sample results, input rejection, arithmetic boundaries, constructor order and shared virtual bases. Python's standard library is sufficient for verification. Animation generation additionally requires Pillow; see the [asset guide](./assets/README.md).
 
 ---
 
@@ -132,6 +125,6 @@ The new Lab 6 guide includes sample inputs, expected results, and short viva not
 
 International Institute of Information Technology, Bhubaneswar
 
-<sub>Animations live in this repository, with static alternatives for reduced-motion preferences.</sub>
+<sub>Animations are stored locally, with static alternatives for reduced-motion preferences.</sub>
 
 </div>

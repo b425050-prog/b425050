@@ -1,0 +1,12 @@
+Enter manager name: Enter age, employee ID, and salary: Enter department: 
+Constructing a Manager object:
+Person constructor
+Employee constructor
+Manager constructor
+
+Manager information
+Name: Asha Das
+Age: 35
+Employee ID: E101
+Salary: 80000.00
+Department: Software Development

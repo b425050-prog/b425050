@@ -1,0 +1,9 @@
+Enter savings account number: Enter savings balance and interest rate (% for one period): Enter current account number: Enter current balance, minimum balance, and maintenance charge: 
+Savings account (interest added once)
+Account number: 00101
+Updated balance: 10500.00
+
+Current account
+Maintenance charge deducted.
+Account number: 00202
+Updated balance: 1900.00

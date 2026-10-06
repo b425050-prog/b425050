@@ -1,0 +1,9 @@
+Enter name: Enter age, roll number, CGPA, employee ID, and salary: 
+Teaching assistant
+Name: Asha Das
+Age: 21
+Roll number: B425050
+CGPA: 9.20
+Employee ID: TA101
+Salary: 15000.00
+Shared Person base: Yes

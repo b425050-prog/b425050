@@ -1,0 +1,12 @@
+
+Enter regular student's name: Enter roll number: Enter three subject marks (0 to 100 each): 
+Enter scholarship student's name: Enter roll number: Enter three subject marks (0 to 100 each): 
+Regular student (no bonus)
+Name: Ravi Kumar
+Roll number: B425001
+Final total: 245.00
+
+Scholarship student (5 bonus marks)
+Name: Asha Das
+Roll number: B425050
+Final total: 250.00

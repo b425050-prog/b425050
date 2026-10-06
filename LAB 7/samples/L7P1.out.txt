@@ -1,0 +1,7 @@
+Enter employee name: Enter basic salary, experience in whole years, and project bonus: 
+Employee name: Asha Das
+Basic salary: 50000.00
+Experience (years): 4
+Experience bonus: 10000.00
+Project bonus: 10000.00
+Final salary: 70000.00

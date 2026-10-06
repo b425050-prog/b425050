@@ -1,0 +1,4 @@
+Enter internal and external exam marks (0 to 100 each): 
+Final result
+Internal exam marks: 25.00
+External exam marks: 65.00

@@ -1,0 +1,6 @@
+Enter registration number: Enter rental days, daily rate, and luxury charge per day: 
+Registration number: OD 02 AB 1234
+Rental days: 3
+Daily rental rate: 2000.00
+Luxury charge per day: 500.00
+Total rental cost: 7500.00

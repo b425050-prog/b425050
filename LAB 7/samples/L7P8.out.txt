@@ -1,0 +1,7 @@
+Enter patient name: Enter patient ID, age, room charge per day, and number of days: 
+Patient name: Ravi Kumar
+Patient ID: P101
+Age: 35
+Room charges per day: 2500.00
+Number of days: 4
+Total hospital bill: 10000.00
