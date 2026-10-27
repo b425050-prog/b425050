@@ -1,0 +1,325 @@
+[
+  {
+    "n": 1,
+    "title": "Game Character Battle",
+    "base": "Character",
+    "method": "attack()",
+    "derived": [
+      "Warrior",
+      "Archer"
+    ],
+    "prompt": "Enter strength and agility: ",
+    "sample": "10 8",
+    "results": [
+      "Warrior damage: 40",
+      "Archer damage: 39"
+    ],
+    "formula": "Warrior: 20 + 2 * strength; Archer: 15 + 3 * agility.",
+    "note": "The attributes are supplied to the constructors because attack() has no parameters. Use long long arithmetic to avoid overflow for valid int attributes.",
+    "animation": [
+      [
+        "Warrior",
+        "20 + 2 x 10",
+        40,
+        "damage"
+      ],
+      [
+        "Archer",
+        "15 + 3 x 8",
+        39,
+        "damage"
+      ]
+    ]
+  },
+  {
+    "n": 2,
+    "title": "Smart Parking Fee Calculator",
+    "base": "ParkingSlot",
+    "method": "calculateFee(int hours)",
+    "derived": [
+      "TwoWheelerSlot",
+      "FourWheelerSlot"
+    ],
+    "prompt": "Enter parking hours: ",
+    "sample": "6",
+    "results": [
+      "Two-wheeler fee: Rs. 54.00",
+      "Four-wheeler fee: Rs. 162.00"
+    ],
+    "formula": "Base fee = hours * rate. Rates: Rs. 10/h and Rs. 30/h. Multiply the entire fee by 0.90 only when hours > 5.",
+    "note": "Exactly 5 hours has no discount. The same duration is used for both vehicle types so their rates can be compared.",
+    "animation": [
+      [
+        "TwoWheelerSlot",
+        "6 x 10 x 0.90",
+        54,
+        "Rs."
+      ],
+      [
+        "FourWheelerSlot",
+        "6 x 30 x 0.90",
+        162,
+        "Rs."
+      ]
+    ]
+  },
+  {
+    "n": 3,
+    "title": "File Compression Simulator",
+    "base": "Compressor",
+    "method": "compress(double fileSize)",
+    "derived": [
+      "TextCompressor",
+      "ImageCompressor"
+    ],
+    "prompt": "Enter original file size in MB: ",
+    "sample": "100",
+    "results": [
+      "Original size: 100.00 MB",
+      "Text compressed size: 40.00 MB",
+      "Image compressed size: 70.00 MB"
+    ],
+    "formula": "Text retains 0.40 * original; image retains 0.70 * original.",
+    "note": "These percentages are the retained sizes, not the reductions. This simulates sizes; it does not compress an actual file.",
+    "animation": [
+      [
+        "TextCompressor",
+        "100 x 0.40",
+        40,
+        "MB"
+      ],
+      [
+        "ImageCompressor",
+        "100 x 0.70",
+        70,
+        "MB"
+      ]
+    ]
+  },
+  {
+    "n": 4,
+    "title": "Food Delivery Time Estimator",
+    "base": "Delivery",
+    "method": "estimateTime(double distance)",
+    "derived": [
+      "BikeDelivery",
+      "DroneDelivery"
+    ],
+    "prompt": "Enter delivery distance in km: ",
+    "sample": "10",
+    "results": [
+      "Bike delivery time: 35.00 minutes",
+      "Drone delivery time: 17.00 minutes"
+    ],
+    "formula": "Bike: (distance / 20) * 60 + 5 minutes; drone: (distance / 40) * 60 + 2 minutes.",
+    "note": "Convert travel hours into minutes before adding the fixed overhead. Even a zero-distance request includes the stated overhead.",
+    "animation": [
+      [
+        "BikeDelivery",
+        "(10 / 20) x 60 + 5",
+        35,
+        "minutes"
+      ],
+      [
+        "DroneDelivery",
+        "(10 / 40) x 60 + 2",
+        17,
+        "minutes"
+      ]
+    ]
+  },
+  {
+    "n": 5,
+    "title": "Smart Irrigation Controller",
+    "base": "IrrigationSystem",
+    "method": "calculateWater(double moisture)",
+    "derived": [
+      "DripIrrigation",
+      "SprinklerIrrigation"
+    ],
+    "prompt": "Enter soil moisture (0 to 100 percent): ",
+    "sample": "40",
+    "results": [
+      "Drip water: 120.00 litres",
+      "Sprinkler water: 180.00 litres"
+    ],
+    "formula": "Drip: 2 * (100 - moisture); sprinkler: 3 * (100 - moisture) litres.",
+    "note": "The allowed moisture range includes 0 and 100. At 100% both systems supply zero litres.",
+    "animation": [
+      [
+        "DripIrrigation",
+        "2 x (100 - 40)",
+        120,
+        "litres"
+      ],
+      [
+        "SprinklerIrrigation",
+        "3 x (100 - 40)",
+        180,
+        "litres"
+      ]
+    ]
+  },
+  {
+    "n": 6,
+    "title": "Cybersecurity Threat Scanner",
+    "base": "SecurityScanner",
+    "method": "scan(int threats)",
+    "derived": [
+      "BasicScanner",
+      "AdvancedScanner"
+    ],
+    "prompt": "Enter detected threats: ",
+    "sample": "25",
+    "results": [
+      "Basic scanner detected: 25",
+      "Advanced scanner detected: 25",
+      "Advanced scanner removed: 22",
+      "Advanced scanner remaining: 3"
+    ],
+    "formula": "Whole-threat convention: remaining = ceil(threats / 10); removed = threats - remaining.",
+    "note": "The sheet does not specify rounding when 90% is fractional. This solution removes floor(0.9 * threats) whole threats and rounds the remainder up; for 25 it removes 22 and retains 3. For multiples of 10 it removes exactly 90%.",
+    "animation": [
+      [
+        "BasicScanner",
+        "reports detected threats",
+        25,
+        "detected"
+      ],
+      [
+        "AdvancedScanner",
+        "25 - floor(0.90 x 25)",
+        3,
+        "remaining"
+      ]
+    ]
+  },
+  {
+    "n": 7,
+    "title": "Cricket Target Calculator",
+    "base": "MatchFormat",
+    "method": "calculateTarget(int firstInningsScore)",
+    "derived": [
+      "T20Match",
+      "ODIMatch"
+    ],
+    "prompt": "Enter first-innings score: ",
+    "sample": "201",
+    "results": [
+      "T20 target: 204",
+      "ODI target: 206"
+    ],
+    "formula": "T20 target = score + ceil(0.01 * score); ODI target = score + ceil(0.02 * score).",
+    "note": "Round the percentage margin up, then add it to the score. No extra +1 is added: this is the worksheet formula. At score 0 the stated formula gives target 0. Integer arithmetic avoids floating-point rounding errors.",
+    "animation": [
+      [
+        "T20Match",
+        "201 + ceil(2.01)",
+        204,
+        "runs"
+      ],
+      [
+        "ODIMatch",
+        "201 + ceil(4.02)",
+        206,
+        "runs"
+      ]
+    ]
+  },
+  {
+    "n": 8,
+    "title": "Cloud Resource Cost Calculator",
+    "base": "CloudResource",
+    "method": "calculateCost(double cpuHours)",
+    "derived": [
+      "StandardInstance",
+      "PremiumInstance"
+    ],
+    "prompt": "Enter CPU-hours: ",
+    "sample": "120",
+    "results": [
+      "Standard cost: Rs. 510.00",
+      "Premium cost: Rs. 1224.00"
+    ],
+    "formula": "Rates: Rs. 5 and Rs. 12 per CPU-hour. If cpuHours > 100, multiply the total by 0.85.",
+    "note": "Exactly 100 CPU-hours has no discount. Fractional CPU-hours are supported. The discount applies to all usage, not only the hours beyond 100.",
+    "animation": [
+      [
+        "StandardInstance",
+        "120 x 5 x 0.85",
+        510,
+        "Rs."
+      ],
+      [
+        "PremiumInstance",
+        "120 x 12 x 0.85",
+        1224,
+        "Rs."
+      ]
+    ]
+  },
+  {
+    "n": 9,
+    "title": "Robot Navigation System",
+    "base": "Robot",
+    "method": "move(double distance)",
+    "derived": [
+      "WheeledRobot",
+      "TrackedRobot"
+    ],
+    "prompt": "Enter travel distance in metres: ",
+    "sample": "12",
+    "results": [
+      "Wheeled robot time: 6.00 seconds",
+      "Tracked robot time: 10.00 seconds"
+    ],
+    "formula": "Time in seconds = distance in metres / speed in m/s. Speeds: 2.0 and 1.2 m/s.",
+    "note": "The two Robot* pointers point to different derived objects. first->move(distance) and second->move(distance) call their respective overrides. No heap allocation is needed.",
+    "animation": [
+      [
+        "WheeledRobot",
+        "12 / 2.0",
+        6,
+        "seconds"
+      ],
+      [
+        "TrackedRobot",
+        "12 / 1.2",
+        10,
+        "seconds"
+      ]
+    ]
+  },
+  {
+    "n": 10,
+    "title": "AI Recommendation Engine",
+    "base": "Recommender",
+    "method": "generateRecommendation(int userRating, int popularity)",
+    "derived": [
+      "PersonalizedRecommender",
+      "TrendingRecommender"
+    ],
+    "prompt": "Enter user rating and popularity (0 to 100): ",
+    "sample": "80 60",
+    "results": [
+      "Personalized score: 74.00",
+      "Trending score: 66.00"
+    ],
+    "formula": "Personalized: 0.7 * userRating + 0.3 * popularity; trending: 0.3 * userRating + 0.7 * popularity.",
+    "note": "Both integer inputs must be from 0 through 100. Decimal coefficients preserve fractional scores. Calls use Recommender* pointers as requested.",
+    "animation": [
+      [
+        "PersonalizedRecommender",
+        "0.7 x 80 + 0.3 x 60",
+        74,
+        "score"
+      ],
+      [
+        "TrendingRecommender",
+        "0.3 x 80 + 0.7 x 60",
+        66,
+        "score"
+      ]
+    ]
+  }
+]

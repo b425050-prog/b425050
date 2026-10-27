@@ -1,0 +1,2 @@
+Enter strength and agility: Warrior damage: 40
+Archer damage: 39

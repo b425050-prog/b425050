@@ -1,0 +1,4 @@
+Enter detected threats: Basic scanner detected: 25
+Advanced scanner detected: 25
+Advanced scanner removed: 22
+Advanced scanner remaining: 3

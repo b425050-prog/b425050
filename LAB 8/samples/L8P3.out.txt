@@ -1,0 +1,3 @@
+Enter original file size in MB: Original size: 100.00 MB
+Text compressed size: 40.00 MB
+Image compressed size: 70.00 MB

@@ -1,0 +1,2 @@
+Enter soil moisture (0 to 100 percent): Drip water: 120.00 litres
+Sprinkler water: 180.00 litres

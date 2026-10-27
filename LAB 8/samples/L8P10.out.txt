@@ -1,0 +1,2 @@
+Enter user rating and popularity (0 to 100): Personalized score: 74.00
+Trending score: 66.00

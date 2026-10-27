@@ -1,0 +1,2 @@
+Enter travel distance in metres: Wheeled robot time: 6.00 seconds
+Tracked robot time: 10.00 seconds

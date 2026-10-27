@@ -1,0 +1,2 @@
+Enter CPU-hours: Standard cost: Rs. 510.00
+Premium cost: Rs. 1224.00

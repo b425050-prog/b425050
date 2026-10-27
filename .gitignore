@@ -4,3 +4,7 @@
 *.o
 *.obj
 **/build/
+
+# Python caches from verification and animation scripts
+__pycache__/
+*.py[cod]

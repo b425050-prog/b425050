@@ -1,0 +1,2 @@
+Enter first-innings score: T20 target: 204
+ODI target: 206
